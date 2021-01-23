@@ -1,0 +1,21 @@
+buzhi bujue  woyijing   likaini
+what i love you is three thousand year old
+think about what hava you do ine
+think about what hava you do ine
+In essence, within the Structured APIs, there are two more APIs, the “untyped”
+DataFrames and the “typed” Datasets. To say that DataFrames are untyped is
+aslightly inaccurate; they have types, but Spark maintains them completely and
+only checks whether those types line up to those specified in the schema at
+runtime. Datasets, on the other hand, check whether types conform to thespecification at compile time.
+Datasets are only available to Java Virtual
+Machine (JVM)–based languages (Scala and Java) and we specify types with
+case classes or Java beans.
+For the most part, you’re likely to work with DataFrames. To Spark (in Scala),
+DataFrames are simply Datasets of Type Row. The “Row” type is Spark’s internal
+representation of its optimized in-memory format for computation. This format
+makes for highly specialized and efficient computation because rather than using
+JVM types, which can cause high garbage-collection and object instantiation
+costs, Spark can operate on its own internal format without incurring any of
+those costs. To Spark (in Python or R), there is no such thing as a Dataset:
+everything is a DataFrame and therefore we always operate on that optimized
+format
