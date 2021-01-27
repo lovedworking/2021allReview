@@ -1,6 +1,7 @@
 package algorithm.dynamicPlan.codeDir;
 
 import java.util.HashMap;
+import java.util.Vector;
 
 /**
  * @author fendoukaoziji
@@ -9,6 +10,8 @@ import java.util.HashMap;
  **/
 public class Fibonaqie {
     public static void main(String[] args) {
+        int i = fib3(10);
+        System.out.println(i);
 
     }
 
@@ -92,6 +95,46 @@ public class Fibonaqie {
          memoMap.put(n,helper(memoMap, n - 1) + helper(memoMap, n - 2));
         return memoMap.get(n);
     }
+
+    /**
+     *
+
+
+     int fib(int n){
+        vector<int> dp(n+1,o)
+        //base case
+        dp[1]=dp[2]=1;
+        for(int i=3;i<=n;i++){
+            dp[i]=dp[i-1]+dp[i-2];
+        }
+        return dp[n];
+
+     }
+
+
+
+
+
+
+
+
+     *
+     */
+
+
+    public static  int fib3(int n){
+        if(n==2||n==1)
+            return 1;
+        int prev=1,curr=1;
+        for (int i = 3; i <=n; i++) {
+            int sum=prev+curr;
+            prev=curr;
+            curr=sum;
+        }
+        return curr;
+    }
+
+
 
 
 }
